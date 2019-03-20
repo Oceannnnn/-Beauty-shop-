@@ -1,0 +1,32 @@
+/* pages/distribution/distribution.wxss */
+@import "../../font/iconfont.wxss";
+@import "../my/my.wxss";
+page{
+  background: #fff;
+}
+.disHeader{
+  background: #464346;
+  margin: 0;
+}
+.postal{
+  border: 1px solid #fff;
+  padding: 10rpx;
+  border-radius: 10rpx;
+}
+.disbosy{
+  padding: 20rpx 0;
+}
+.integral_item{
+  padding: 0;
+}
+.disfooter .iconfont{
+  font-size: 80rpx;
+}
+.disfooter{
+  flex-wrap: wrap;
+}
+.disfooter_item{
+  width: 33.33%;
+  height: 200rpx;
+  box-sizing: border-box;
+}

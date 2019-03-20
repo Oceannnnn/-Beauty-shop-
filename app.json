@@ -1,0 +1,80 @@
+{
+  "pages":[
+    "pages/index/index",
+    "pages/my/my",
+    "pages/personal/personal",
+    "pages/article/article",
+    "pages/about/about",
+    "pages/comment/comment",
+    "pages/collection/collection",
+    "pages/classify/classify",
+    "pages/cart/cart",
+    "pages/home/home",
+    "pages/toBrand/toBrand",
+    "pages/collage/collage",
+    "pages/secKill/secKill",
+    "pages/goodsDetails/goodsDetails",
+    "pages/allorder/allorder",
+    "pages/balance/balance",
+    "pages/record/record",
+    "pages/recharge/recharge",
+    "pages/orderDetails/orderDetails",
+    "pages/confirmationOrder/confirmationOrder",
+    "pages/myadd/myadd",
+    "pages/consumer/consumer",
+    "pages/coupons/coupons",
+    "pages/useCoupon/useCoupon",
+    "pages/payResults/payResults",
+    "pages/distribution/distribution",
+    "pages/distributionCommission/distributionCommission",
+    "pages/distributionDan/distributionDan",
+    "pages/distributionExpressive/distributionExpressive",
+    "pages/distributionIllustrate/distributionIllustrate",
+    "pages/distributionMoney/distributionMoney",
+    "pages/distributionQRCode/distributionQRCode",
+    "pages/distributionTeam/distributionTeam"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
+    "navigationBarBackgroundColor": "#F02F72",
+    "navigationBarTitleText": "皙言美妆",
+    "navigationBarTextStyle": "white"
+  }, 
+  "tabBar": {
+    "color": "#989898",
+    "backgroundColor": "#fff",
+    "selectedColor": "#333333",
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "text": "品牌",
+        "iconPath": "images/index.png",
+        "selectedIconPath": "images/index_active.png"
+      },
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/home.png",
+        "selectedIconPath": "images/home_active.png"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "text": "分类",
+        "iconPath": "images/fen.png",
+        "selectedIconPath": "images/fen_active.png"
+      },
+      {
+        "pagePath": "pages/cart/cart",
+        "text": "购物车",
+        "iconPath": "images/cart.png",
+        "selectedIconPath": "images/cart_active.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/my.png",
+        "selectedIconPath": "images/my_active.png"
+      }
+    ]
+  }
+}

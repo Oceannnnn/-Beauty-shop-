@@ -1,0 +1,24 @@
+<!--pages/distributionDan/distributionDan.wxml-->
+<view class="nav-scroll f_32 bg_f">
+  <view class="scroll-view_H">
+    <view wx:for="{{HeaderList}}" wx:key="item" data-type='{{item.type}}' data-id="{{item.id}}" bindtap='toList' class='nav-name'>
+      <text class="{{item.id == currentId ? 'nav-hover' : ''}} p_20">{{item.name}}</text>
+    </view>
+  </view>
+</view>
+<view class='p_20 scroll_body' wx:if="{{productsList!=''}}">
+  <view wx:for="{{productsList}}" wx:key='' class='index_item bg_f f_32' data-id='{{item.id}}' bindtap='toBrand' data-type="1" wx:if="{{currentId==1}}">
+    <image src='{{item.thumb}}' class='index_img w100' mode='widthFix'></image>
+    <view class='ml_20 mt_20 sheng'>{{item.title}}</view>
+    <view class='p_20 price'>￥{{item.total}}</view>
+  </view>
+  <view wx:for="{{productsList}}" wx:key='' class='index_item bg_f f_32 flex p_20' data-id='{{item.id}}' bindtap='' wx:if="{{currentId==2}}">
+    <image src='{{item.thumb}}' class='index_img2 index_img'></image>
+    <view class='ml_20 index_right2'>
+      <view class='sheng'>{{item.title}}</view>
+      <view class='mt_20 price'>￥{{item.order_amount}}</view>
+      <view class='mt_20 c_999 f_28'>订单号：{{item.order_no}}</view>
+      <view class='mt_20 f_28'>状态：{{item.confirm}}</view>
+    </view>
+  </view>
+</view>

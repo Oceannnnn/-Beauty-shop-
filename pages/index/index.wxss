@@ -1,0 +1,12 @@
+page {
+  background: #f2f2f2;
+}
+.index_item{
+  border-radius: 20rpx;
+  letter-spacing: 1px;
+  box-shadow: 1px 1px 10px #dddbdb;
+  margin-bottom: 40rpx;
+}
+.index_img{
+  border-radius: 20rpx;
+}

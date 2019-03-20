@@ -1,0 +1,176 @@
+<!--pages/my/my.wxml-->
+<view class="my-wrap f_32">
+  <view class="p_20">
+    <image src="../../images/my_h.png" class='my_h w100' mode='widthFix'></image>
+    <view wx:if="{{!hasUserInfo}}" class='flex_af mb_20 my_t'>
+      <view class='f_32 flex_af'>
+        <view class='pr avatar_info'>
+          <image class="avatar" src="../../images/wu.png"></image>
+          <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='getUserInfo'> </button>
+        </view>
+        <view>未登录
+          <text class='f_28'>(请点击登录)</text>
+        </view>
+      </view>
+    </view>
+    <view wx:else class="flex_af my_t">
+      <image class="avatar mb_20" src="{{userInfo.avatarUrl}}"></image>
+      <view>{{userInfo.nickName}}</view>
+    </view>
+  </view>
+  <view class='flex_i mb_20 bg_f f_32'>
+    <navigator class="integral_item" url='../balance/balance'>
+      余额：{{balance}}
+    </navigator>
+    <view class="integral_item bor_l">
+      积分：{{integral}}
+    </view>
+  </view>
+  <view class="nav-warp f_32">
+    <view class="nav-item p_40 bor_b flex_cb pr">
+      <form report-submit='true' class='formBtn' bindsubmit='allorder' data-id="0" data-type="1" data-allorder="all">
+        <button class='formBtn' form-type='submit'></button>
+      </form>
+      <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+      <view>我的订单</view>
+      <view class='flex_i f_28 c_999'>
+        查看更多订单
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+    </view>
+    <view class='flex_i p_20 f_28'>
+      <view wx:for="{{order}}" wx:for-item="itemName" wx:key="itemName" class='flex_af orderItem pr'>
+        <form report-submit='true' class='formBtn' bindsubmit='allorder' data-id="{{itemName.id}}" data-type="1" data-allorder="{{itemName.allorder}}">
+          <button class='formBtn' form-type='submit'></button>
+          <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        </form>
+        <i class="iconfont icon-{{itemName.icon}} mb_10"></i>
+        {{itemName.name}}
+      </view>
+    </view>
+    <view class='my_footer bor_top f_28'>
+      <view class="nav-item flex_cb p_20 pr bor_b">
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <navigator class="formBtn" url="../personal/personal" wx:else>
+        </navigator>
+        <view>个人资料</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_b">
+        <form report-submit='true' class='formBtn' bindsubmit='allorder' data-type="2" data-id="0" data-allorder="all">
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>我的拼团</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_b">
+        <form report-submit='true' class='formBtn' bindsubmit='collection'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>我的收藏</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_bom">
+        <form report-submit='true' class='formBtn' bindsubmit='coupons'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>我的优惠券</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_b">
+        <form report-submit='true' class='formBtn' bindsubmit='cart'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>购物车</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_b">
+        <form report-submit='true' class='formBtn' bindsubmit='myadd'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>收货地址</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_bom">
+        <button open-type="contact" class="formBtn">咨询</button>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>退款/售后</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_b">
+        <form report-submit='true' class='formBtn' bindsubmit='distribution'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>我的团队</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_b">
+        <form report-submit='true' class='formBtn' bindsubmit='distribution' data-type='1'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>我的专属二维码</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_bom">
+        <form report-submit='true' class='formBtn' bindsubmit='distribution' data-type='2'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>利用好手中的这瓶你的皮肤会大好特好！</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr {{index==0?'':'bor_t'}}" wx:for="{{article}}" wx:key="">
+        <form report-submit='true' class='formBtn' bindsubmit='article' data-id='{{item.id}}'>
+          <button class='formBtn' form-type='submit'></button>
+        </form>
+        <button open-type="getUserInfo" bindgetuserinfo="getUserInfo" class='formBtn' wx:if="{{!hasUserInfo}}"> </button>
+        <view>{{item.title}}</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <view class="nav-item flex_cb p_20 pr bor_top">
+        <button open-type="contact" class="formBtn">咨询</button>
+        <view>一键拨号</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </view>
+      <navigator class="nav-item flex_cb p_20 pr bor_t" url="../about/about">
+        <view>开发中心</view>
+        <image class="arrow ml_20" src="../../images/last_Dawn.png"></image>
+      </navigator>
+    </view>
+  </view>
+</view>
+<navigator class='flex_af f_28 p_20 mt_20' url='../about/about'>技术支持 @ 风擎网络科技</navigator>
+<!-- <view class='distribution' hidden='{{distributionHidden}}'>
+  <view class='disBody bg_f f_34 pr'>
+    <i class="iconfont icon-guanbi" bindtap="distributionHidden"></i>
+    <view class='flex_ja disHeader'>分销商申请</view>
+    <view class='flex_i mb_20'>
+      * 姓 名：
+      <input type='text' class='disInput' bindinput="bindName"></input>
+    </view>
+    <view class='flex_i mb_20'>
+      * 电 话：
+      <input type='number' class='disInput' bindinput="bindPhone"></input>
+    </view>
+    <view class='flex_i mb_20'>
+      身份证：
+      <input type='text' class='disInput' bindinput="bindIDCard"></input>
+    </view>
+    <view class='flex_i mb_20'>
+      银行卡：
+      <input type='text' class='disInput' bindinput="bindBank"></input>
+    </view>
+    <view class='flex_i mb_20'>
+      开户号：
+      <input type='text' class='disInput' bindinput="bindAccount"></input>
+    </view>
+    <button class='s_foot' bindtap='bindtapUp'>提交</button>
+  </view>
+</view> -->

@@ -1,0 +1,9 @@
+<!--index.wxml-->
+<view class='p_20' wx:if="{{brandList!=''}}">
+  <view wx:for="{{brandList}}" wx:key='' class='index_item bg_f f_32' data-id='{{item.id}}' bindtap='toBrand'>
+    <image src='{{item.pic}}' class='index_img w100' mode='widthFix'></image>
+    <view class='p_20 sheng'>{{item.title}}</view>
+  </view>
+
+</view>
+<navigator class='flex_af f_28 p_20'url='../about/about'>技术支持 @ 风擎网络科技</navigator>

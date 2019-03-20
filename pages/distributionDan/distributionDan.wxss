@@ -1,0 +1,11 @@
+/* pages/distributionDan/distributionDan.wxss */
+
+@import "../consumer/consumer.wxss";
+@import "../index/index.wxss";
+.index_img2{
+  width: 220rpx;
+  height: 160rpx;
+}
+.index_right2{
+  width: 70%;
+}

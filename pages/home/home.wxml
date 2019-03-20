@@ -1,0 +1,23 @@
+<!--pages/home/home.wxml-->
+<view class='main_header'>
+  <swiper indicator-dots interval="3000" duration="1000" autoplay='true' circular>
+    <block wx:for="{{imgUrls}}" wx:key="{{itemName}}" wx:for-item="itemName">
+      <swiper-item data-id="{{itemName.pro_id}}" data-type="0" bindtap='{{itemName.coupon==1?"toCoupon":"toDetails"}}'>
+        <image src="{{itemName.pic}}" class="slide-image" />
+      </swiper-item>
+    </block>
+  </swiper>
+</view>
+<navigator class='home_item f_32 pr' url='../collage/collage'>
+  <image src='{{group}}' class='home_img w100' mode='widthFix'></image>
+</navigator>
+<navigator class='home_item f_32 pr' url='../secKill/secKill'>
+  <image src='{{sec}}' class='home_img w100' mode='widthFix'></image>
+</navigator>
+<view wx:for="{{homeList}}" wx:key='homeList' class='home_item f_28 pr' bindtap='toDetails' data-id='{{item.id}}'>
+  <image src='{{item.thumb}}' class='home_img w100' mode='widthFix'></image>
+  <view class='home_info {{index%2==0?"right":"left"}} flex_af'>
+    <view class='home_text'>{{item.name}}</view>
+    <view class='home_more mt_20 c_f f_28'>查看更多</view>
+  </view>
+</view>

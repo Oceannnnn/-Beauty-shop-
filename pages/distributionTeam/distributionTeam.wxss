@@ -1,0 +1,21 @@
+/* pages/distributionTeam/distributionTeam.wxss */
+@import "../allorder/allorder.wxss";
+page{
+  background: #fff;
+}
+.team_img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}
+.nav-name{
+  width:50%;
+}
+.scroll_body{
+  margin-top: 120rpx;
+}
+.team_img{
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+}

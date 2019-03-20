@@ -1,0 +1,25 @@
+/* pages/distributionCommission/distributionCommission.wxss */
+@import "../../font/iconfont.wxss";
+@import "../distributionMoney/distributionMoney.wxss";
+.iconfont{
+  font-size: 50rpx;
+}
+.s_parameterWrap{
+  flex-wrap: wrap;
+}
+.s_parameterInfo{
+  text-align: center;
+  border:1px solid #464346; 
+  box-sizing:border-box;
+  border-radius: 10rpx;
+  padding: 10rpx 20rpx;
+}
+.s_parameterInfo.checked{
+  border:1px solid #F22C07; 
+}
+input {
+  width: 80%;
+}
+.disHeader.on{
+  background: #029F53;
+}

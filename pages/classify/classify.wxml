@@ -1,0 +1,28 @@
+<!--pages/classify/classify.wxml-->
+<view class='class_header flex_i'>
+  <image src='../../images/class_icon.png' class='class_image' bindtap='close'></image>
+  <view class='search_box flex_cb ml_20'>
+    <input placeholder='请输入搜索产品' value='{{searchValue}}' type='text' bindinput='searchValue' bindconfirm="bindconfirm" class='f_28 searchValue' placeholder-style="color:#D08FA5;"></input>
+    <image src='../../images/class_s.png' class='arrow' bindtap='bindsearch'></image>
+  </view>
+</view>
+<view class="nav-scroll f_32" wx:if="{{navLeftItems!=''}}" hidden='{{navHide}}'>
+  <scroll-view class="scroll-view_H" scroll-x="true">
+    <view wx:for="{{navLeftItems}}" wx:key="item" data-id="{{item.id}}" bindtap='toList' class="nav-name" data-index='{{index}}'>
+      <text class="{{item.id == curNav ? 'nav-hover' : ''}} p_20">{{item.cate_name}}</text>
+    </view>
+  </scroll-view>
+</view>
+<view class='classBody'>
+  <view wx:for="{{searchValue!=''?searchPageList:navRightItems}}" class='navRightItems p_20 {{index==0?"":"bor_t"}} flex' wx:key="item" data-id='{{item.id}}' bindtap='toDetails'>
+    <image class='right_img' mode='widthFix' src='{{item.thumb}}'></image>
+    <view class='nav_right mr_20 flex_fs ml_20'>
+      <view>
+        <view class='f_34'>{{item.name}}</view>
+        <view class='f_24 mt_10 sheng2 c_999'>{{item.introduction}}</view>
+      </view>
+      <view class='f_28 mt_10'>￥{{item.price}}</view>
+    </view>
+    <view class='nav_tan c_f f_30 mt_20'>探索</view>
+  </view>
+</view>

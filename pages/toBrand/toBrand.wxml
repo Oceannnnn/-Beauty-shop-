@@ -1,0 +1,6 @@
+<!--pages/toBrand/toBrand.wxml-->
+<import src="../../wxParse/wxParse.wxml" />
+<view class='{{type==1?"brand_body":""}}'>
+  <template is="wxParse" data="{{wxParseData:details.nodes}}" />
+</view>
+<button class="s_foot" wx:if="{{type==1}}" bindtap='order'>立即下单</button>

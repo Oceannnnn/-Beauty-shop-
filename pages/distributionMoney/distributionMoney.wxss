@@ -1,0 +1,5 @@
+/* pages/distributionMoney/distributionMoney.wxss */
+@import "../distribution/distribution.wxss";
+.s_foot{
+  margin: 60rpx auto 0;
+}

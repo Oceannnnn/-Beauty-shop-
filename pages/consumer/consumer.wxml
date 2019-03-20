@@ -1,0 +1,39 @@
+<!--pages/consumer/consumer.wxml-->
+<view class='{{currentId==3?"page":""}}'>
+  <view class="nav-scroll f_32 bg_f">
+    <view class="scroll-view_H">
+      <view wx:for="{{HeaderList}}" wx:key="item" data-type='{{item.type}}' data-id="{{item.id}}" bindtap='toList' class='nav-name'>
+        <text class="{{item.id == currentId ? 'nav-hover' : ''}} p_20">{{item.name}}</text>
+      </view>
+    </view>
+  </view>
+  <view class='p_20' hidden='{{currentId!=3?false:true}}'>
+    <view class='scroll_body'>
+      <view wx:for="{{currentId==1?money_off:discount}}" wx:key="item" class='coupon_items mb_20 flex_cb bg_f {{currentId==1?"on":""}}'>
+        <view class='coupon_left ml_10'>
+          <view class='coupon_title flex pr' wx:if="{{currentId==1}}">
+            <view class='icon_coupon'>￥</view><view class='coupon_money'>{{item.money}}</view>
+            <view class='ml_20'>
+              <view class='conpon_biao'>满减券</view>
+              <view class='pr f_32 ml_20 c_999'>[满{{item.condition}}可用]</view>
+            </view>
+          </view>
+          <view class='coupon_title flex pr ml_20' wx:else>
+            <view class='coupon_money'>{{item.discount}}</view> <view class='icon_coupon'>折</view>
+            <view class='ml_20'>
+              <view class='conpon_biao'>折扣券</view>
+              <view class='pr f_32 ml_20 c_999'>[满{{item.condition}}可用]</view>
+            </view>
+          </view>
+        </view>
+        <view wx:if="{{item.status==0}}" class='button_coupon pr mr_20' data-index='{{index}}' data-coupon_id="{{item.coupon_id}}" bindtap='toVoucher'>
+          立即领取
+        </view> 
+        <navigator wx:else class='button_coupon pr mr_20' open-type='switchTab' url="../index/index">
+          立即使用
+        </navigator> 
+        <image src='../../images/yi_ling.png' class='ling' wx:if="{{item.status!=0}}"></image>
+      </view>
+    </view>
+  </view>
+</view>

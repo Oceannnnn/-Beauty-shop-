@@ -1,0 +1,11 @@
+<!--pages/personal/personal.wxml-->
+<view class='p_20 f_32'>
+  <view class='flex_i bor_b p_20'>
+  昵称：{{userInfo.nickName}}
+  </view>
+  <view class='flex_i p_20'>
+  头像： <image src='{{userInfo.avatarUrl}}' class='personal'></image>
+  </view>
+
+
+</view>

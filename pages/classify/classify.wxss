@@ -1,0 +1,60 @@
+/* pages/classify/classify.wxss */
+@import "../collage/collage.wxss";
+
+.class_header {
+  background: #f02f72;
+  padding: 20rpx;
+}
+
+.class_image {
+  width: 60rpx;
+  height: 60rpx;
+}
+
+.search_box {
+  border: 1px solid #f4a6c0;
+  border-radius: 30rpx;
+  width: 82%;
+  padding: 0 20rpx;
+  color: #fff;
+  background: #d52d6a;
+}
+
+.searchValue {
+  width: 90%;
+}
+
+.nav-scroll {
+  position: relative;
+}
+
+page {
+  background: #f2f2f2;
+}
+
+.classBody {
+  width: 96%;
+  margin: 20rpx auto;
+  background: #fff;
+  border-radius: 10rpx;
+}
+
+.nav_tan {
+  width: 120rpx;
+  border-radius: 20rpx;
+  background: #f02f72;
+  height: 70rpx;
+  text-align: center;
+  line-height: 70rpx;
+}
+
+.right_img {
+  width: 200rpx;
+  height: 180rpx;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+
+.nav_right {
+  width: 320rpx;
+}

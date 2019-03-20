@@ -1,0 +1,74 @@
+<!--pages/distribution/distribution.wxml-->
+<view class='p_20 disHeader c_f'>
+  <view class="flex_i p_20 bor_b f_34">
+    <image class="avatar mr_20" src="{{userInfo.avatarUrl}}"></image>
+    <view>{{userInfo.nickName}}</view>
+  </view>
+  <view class='flex_cb p_20'>
+    <view class='f_30'>
+      可提现佣金
+      <view class='f_32 mt_20'>{{can_money}}元</view>
+    </view>
+    <view class='postal f_32' data-type="1" bindtap="goCommission">提现</view>
+  </view>
+</view>
+<view class='disbosy flex_i f_32 bor_bom'>
+  <view class='flex_af integral_item'>
+    已提现的佣金
+    <view class='c_029 mt_10'>{{yet_money}}元</view>
+  </view>
+  <view class='flex_af integral_item bor_l'>
+    未结算佣金
+    <view class='c_ff3 mt_10'>{{un_money}}元</view>
+  </view>
+</view>
+<view class='disfooter flex_i f_32'>
+  <view class='flex_faj disfooter_item bor_b bor_r' bindtap='toMoney'>
+    <i class="iconfont icon-icon-test c_fdb"></i>
+    分销佣金
+    <view class='c_ea5 mt_10'>{{money}}元</view>
+  </view>
+  <view class='flex_faj disfooter_item bor_b bor_r pr'>
+    <form report-submit='true' class='formBtn' data-id="0" data-type="3" data-allorder="all" bindsubmit='allorder'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <i class="iconfont icon-dingdan c_71b"></i>
+    分销订单
+  </view>
+  <view class='flex_faj disfooter_item bor_b pr'>
+    <form report-submit='true' class='formBtn' data-type="1" bindsubmit='toExpressive'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <i class="iconfont icon-mingxiweihuyichang c_ea5"></i>
+    提现明细
+  </view>
+  <navigator class='flex_faj disfooter_item bor_r pr bor_b' url='../distributionTeam/distributionTeam'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <i class="iconfont icon-pintuan c_5e8"></i>
+    我的团队
+    <view class='c_ea5 mt_10'>{{num}}人</view>
+  </navigator>
+  <navigator class='flex_faj disfooter_item bor_r pr bor_b' url='../distributionQRCode/distributionQRCode'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <i class="iconfont icon-ico c_029"></i>
+    推广二维码
+  </navigator>
+  <navigator class='flex_faj disfooter_item bor_r pr bor_b' url='../distributionIllustrate/distributionIllustrate'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <i class="iconfont icon-shuoming c_ea5"></i>
+    佣金提现说明
+  </navigator>
+  <navigator class='flex_faj disfooter_item bor_r pr bor_b' url='../distributionDan/distributionDan'>
+    <form report-submit='true' class='formBtn' bindsubmit='bindsubmit'>
+      <button class='formBtn' form-type='submit'></button>
+    </form>
+    <i class="iconfont icon-xiadan c_ea5"></i>
+    下单中心
+  </navigator>
+</view>
